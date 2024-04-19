@@ -2,6 +2,20 @@ import json
 import math
 import random
 import time
+import subprocess
+from threading import Timer
+
+def call_subprocess():
+    try:
+        subprocess.call(["python", "mesafe_hesaplama.py"])
+    except Exception as e:
+        print("!!!!!Hata:", e)
+
+def repeat_call():
+    call_subprocess()
+    # Belirli aralıklarla alt işlemi tekrar çağırmak için Timer kullanın
+    timer = Timer(1.0, repeat_call)
+    timer.start()
 
 # Veriyi output.json dosyasından oku
 with open('output.json', 'r') as file:
@@ -19,6 +33,7 @@ def move_coordinate(x, y, length, angle_degrees):
     return new_x, new_y
 
 while True:
+    repeat_call()
     # Her hayvanın koordinatını rastgele bir yönde 100 metre hareket ettir
     for key, value in data["animal_coords"].items():
         x = value.get("x")
@@ -36,6 +51,4 @@ while True:
     # Sonuçları bir dosyaya yaz
     with open('output.json', 'w') as file:
         json.dump(data, file, indent=4)
-        
-    # 10 saniye bekle
-    time.sleep(10)
+
