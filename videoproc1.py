@@ -23,7 +23,7 @@ class VideoProcessor:
         with open('output.json', 'r') as f:
             data = json.load(f)
             self.camera_coords = data['camera_coords'][:4]
-            self.animals_coords = data['animnals_coords']
+            self.animals_coords = data['animal_coords']
 
         self.corners = {
             'top_left': tuple(self.camera_coords[0]),
