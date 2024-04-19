@@ -49,7 +49,7 @@ bottom_right = camera_coords[2]
 rectangle = Rectangle(top_left, top_right, bottom_left, bottom_right)
 
 # Hayvan konumları
-animal_data = data['animnals_coords']
+animal_data = data['animal_coords']
 animals = [Animal((animal['x'], animal['y']), animal['name'], animal['temperature']) for animal in animal_data.values()]
 
 # Hayvanların konumlarını kontrol etme

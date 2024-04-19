@@ -7,7 +7,7 @@ from threading import Timer
 
 def call_subprocess():
     try:
-        subprocess.call(["python", "random_movement.py"])
+        subprocess.call(["python", "random_ movement.py"])
     except Exception as e:
         print("!!!!!Hata:", e)
 
@@ -50,7 +50,7 @@ class VideoProcessor:
         animals = []
         with open('output.json', 'r') as f:
             data = json.load(f)
-            animnals_coords = data['animnals_coords']
+            animnals_coords = data['animal_coords']
             for i in range(num_animals):
                 animal_name = f'Animal{i+1}'
                 random_animal_key = f'animal_coords_{random.randint(1, len(animnals_coords))}'

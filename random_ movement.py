@@ -20,18 +20,18 @@ def move_coordinate(x, y, length, angle_degrees):
 
 while True:
     # Her hayvanın koordinatını rastgele bir yönde 100 metre hareket ettir
-    for key, value in data["animnals_coords"].items():
+    for key, value in data["animal_coords"].items():
         x = value.get("x")
         y = value.get("y")
         if x is None or y is None:
             print(f"Hata: {key} koordinatları eksik.")
         else:
-            # print(f"{key}: ({x}, {y})")
+            print(f"{key}: ({x}, {y})")
             # Koordinatları rastgele bir yönde hareket ettir
             random_angle_degrees = random.uniform(0, 360)
             new_x, new_y = move_coordinate(x, y, vector_length, random_angle_degrees)
-            data["animnals_coords"][key]["x"] = new_x
-            data["animnals_coords"][key]["y"] = new_y
+            data["animal_coords"][key]["x"] = new_x
+            data["animal_coords"][key]["y"] = new_y
 
     # Sonuçları bir dosyaya yaz
     with open('output.json', 'w') as file:
