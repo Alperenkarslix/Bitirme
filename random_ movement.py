@@ -26,7 +26,7 @@ while True:
         if x is None or y is None:
             print(f"Hata: {key} koordinatları eksik.")
         else:
-            print(f"{key}: ({x}, {y})")
+            # print(f"{key}: ({x}, {y})")
             # Koordinatları rastgele bir yönde hareket ettir
             random_angle_degrees = random.uniform(0, 360)
             new_x, new_y = move_coordinate(x, y, vector_length, random_angle_degrees)

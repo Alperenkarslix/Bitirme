@@ -142,6 +142,7 @@ class VideoProcessor:
 
 if __name__ == "__main__":
     video_file = "videos\ornek_video.mp4"
+    # video_file = 0
     target_width = 1920
     target_height = 1080
     num_animals = 5
